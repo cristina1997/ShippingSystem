@@ -18,12 +18,13 @@ public class Ship {
 	@GeneratedValue
 	private int sid;
 	@NotNull
-    @Size(min=1,max=250)
+    @Size(min=1,max=250, message="Size must be between 1 and 250")
 	private String name;
+	@Min(value = 0, message="Size must be greater than or equal to 0")
 	private int passengers;
-	@NotNull
+	@NotNull(message="Size must be between 1 and 250")
 	private BigDecimal cost;
-	@Min(value = 1)
+	@Min(value = 1, message="Size must be greater than or equal to 1")
 	private double metres;
 	
 	@ManyToOne

@@ -5,9 +5,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,11 +23,6 @@ import com.ships.services.ShippingCompanyService;
 
 @Controller
 public class ShipController {
-	// show ships - get
-	// add ship - get first to get the page and then post to return the other info when press ok
-	// RequestMapping = "/showShips" service.getShips - what service does it calls a method that doessomething in repository and gets it back
-	// Repo - CRUD Repository it has a number of built in methods (such as show all, add and delete) that are used
-	
 	// Show shipping companies - get
 	// Add shipping companies get + post like above
 	@Autowired
@@ -50,7 +48,11 @@ public class ShipController {
 	}
 	
 	@RequestMapping(value = "/addShip", method=RequestMethod.POST)
-	public String addShipPOST(@ModelAttribute("ship") Ship ship, Model model) {
+	public String addShipPOST(@Valid @ModelAttribute("ship") Ship ship, BindingResult result, Model model) {
+		
+		if (result.hasErrors())
+			return "addShip";
+		
 		shipService.save(ship);
 		return "redirect:showShips";
 	}
