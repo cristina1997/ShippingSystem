@@ -22,12 +22,12 @@ public class ShippingCompany {
 	@GeneratedValue
 	private int scid;
 	@NotNull
-    @Size(min=1,max=250)
+    @Size(min=1,max=250, message="Size must be between 1 and 250")
 	private String name;
 	@NotNull
-    @Size(min=1,max=250)
+    @Size(min=1,max=250, message="Size must be between 1 and 250")
 	private String homePort;
-	@NotNull
+	@NotNull(message="May not be null")
 	private BigDecimal balance;
 	@OneToMany(mappedBy="shippingCompany")
 	private List<Ship>  
@@ -70,8 +70,7 @@ public class ShippingCompany {
 	}
 	@Override
 	public String toString() {
-		return "ShippingCompany [scid=" + scid + ", name=" + name + ", homePort=" + homePort + ", balance=" + balance
-				+  "]";
+		return "ShippingCompany scid=" + scid + ", name=" + name + ", homePort=" + homePort + ", balance=" + balance;
 	}
 
 }

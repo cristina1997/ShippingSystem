@@ -8,32 +8,27 @@
 <head>
 <link href="/css/style.css" rel="stylesheet"></link>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Add Shipping List</title>
+<title>Add Shipping Company List</title>
 </head>
 <body>
 	<h1>Add Person</h1>
 	
-	<form:form modelAttribute="ship">
+	<form:form modelAttribute="shippingCompany">
 		<table>
 			<tr>
-				<td>Ship Name </td>
+				<td>Shipping Company Name </td>
 				<td><form:input path="name"></form:input></td>
 				<td><form:errors path="name"></form:errors></td>
 			</tr>
 			<tr>
-				<td>Passengers </td>
-				<td><form:input path="passengers"></form:input></td>
-				<td><form:errors path="passengers"></form:errors></td>
+				<td>Home Port </td>
+				<td><form:input path="homePort"></form:input></td>
+				<td><form:errors path="homePort"></form:errors></td>
 			</tr>	
 			<tr>
-				<td>Cost </td>
-				<td><form:input path="cost"></form:input></td>
-				<td><form:errors path="cost"></form:errors></td>
-			</tr>
-			<tr>	
-				<td>Meters </td>
-				<td><form:input path="metres"></form:input></td>
-				<td><form:errors path="metres"></form:errors></td>
+				<td>Balance </td>
+				<td><form:input path="balance"></form:input></td>
+				<td><form:errors path="balance"></form:errors></td>
 			</tr>
 			<tr>
 				<td colspan="2">

@@ -16,9 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.ships.model.Ship;
-import com.ships.model.ShippingCompany;
 import com.ships.services.ShipService;
-import com.ships.services.ShippingCompanyService;
 
 
 @Controller
@@ -27,15 +25,14 @@ public class ShipController {
 	// Add shipping companies get + post like above
 	@Autowired
 	ShipService shipService;
-	
-	@Autowired
-	ShippingCompanyService shippingCompanyService;
-	
+		
 	@RequestMapping(value = "/showShips", method=RequestMethod.GET)
 	public String listShips(Model model) {
+		
 		List<Ship> ships = shipService.findAll();
 		model.addAttribute("ships", ships);
-			return "showShip";
+		
+		return "showShips";
 	}
 	
 	@RequestMapping(value = "/addShip", method=RequestMethod.GET)

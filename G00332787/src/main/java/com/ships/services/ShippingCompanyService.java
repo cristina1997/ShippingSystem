@@ -11,9 +11,14 @@ import com.ships.repositories.ShippingCompanyRepository;
 @Service
 public class ShippingCompanyService {
 	@Autowired
-	ShippingCompanyRepository shipCompanyRepository;
+	ShippingCompanyRepository shippingCompanyRepository;
 	
 	public List<ShippingCompany> findAll() {
-		return (List<ShippingCompany>) shipCompanyRepository.findAll();
+		return (List<ShippingCompany>) shippingCompanyRepository.findAll();
+	}
+
+	public ShippingCompany save(ShippingCompany shippingCompany) {
+		return shippingCompanyRepository.save(shippingCompany);	
+		
 	}
 }
