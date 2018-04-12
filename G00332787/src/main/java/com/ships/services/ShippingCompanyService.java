@@ -18,7 +18,6 @@ public class ShippingCompanyService {
 	}
 
 	public ShippingCompany save(ShippingCompany shippingCompany) {
-		return shippingCompanyRepository.save(shippingCompany);	
-		
+		 return shippingCompanyRepository.save(shippingCompany);		
 	}
 }

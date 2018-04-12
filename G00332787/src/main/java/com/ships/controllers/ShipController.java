@@ -21,8 +21,6 @@ import com.ships.services.ShipService;
 
 @Controller
 public class ShipController {
-	// Show shipping companies - get
-	// Add shipping companies get + post like above
 	@Autowired
 	ShipService shipService;
 		

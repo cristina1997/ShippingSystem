@@ -11,7 +11,7 @@
 <title>Add Shipping Company List</title>
 </head>
 <body>
-	<h1>Add Person</h1>
+	<h1>Add Shipping Company</h1>
 	
 	<form:form modelAttribute="shippingCompany">
 		<table>

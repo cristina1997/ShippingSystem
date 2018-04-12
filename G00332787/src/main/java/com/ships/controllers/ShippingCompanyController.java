@@ -26,7 +26,7 @@ public class ShippingCompanyController {
 		List<ShippingCompany> shippingCompanies = shippingCompanyService.findAll();
 		model.addAttribute("shippingCompanies", shippingCompanies);
 		
-		return "showShippingCompany";
+		return "showShippingCompanies";
 	}
 	
 	@RequestMapping(value = "/addShippingCompany", method=RequestMethod.GET)
@@ -45,7 +45,7 @@ public class ShippingCompanyController {
 			return "addShippingCompany";
 		
 		shippingCompanyService.save(shippingCompany);
-		return "redirect: /showShippingCompany";
+		return "redirect:showShippingCompanies";
 	}
 	
 }

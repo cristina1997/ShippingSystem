@@ -4,6 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.ships.model.Ship;
 
-public interface ShipRepository  extends CrudRepository<Ship, Long> {
+public interface ShipRepository extends CrudRepository<Ship, Long> {
 	
 }
