@@ -1,15 +1,21 @@
 package com.ships.controllers;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.ships.model.Ship;
+import com.ships.model.ShippingCompany;
 import com.ships.services.ShipService;
+import com.ships.services.ShippingCompanyService;
 
 
 @Controller
@@ -24,11 +30,29 @@ public class ShipController {
 	@Autowired
 	ShipService shipService;
 	
-	@RequestMapping(value = "/showShip", method=RequestMethod.GET)
+	@Autowired
+	ShippingCompanyService shippingCompanyService;
+	
+	@RequestMapping(value = "/showShips", method=RequestMethod.GET)
 	public String listShips(Model model) {
-		List<Ship> ship = shipService.findAll();
+		List<Ship> ships = shipService.findAll();
+		model.addAttribute("ships", ships);
+			return "showShip";
+	}
+	
+	@RequestMapping(value = "/addShip", method=RequestMethod.GET)
+	public String addShipGET(Model model) {
+
+		Ship ship = new Ship();
 		model.addAttribute("ship", ship);
-			return "showShipping";
+		
+		return "addShip";
+	}
+	
+	@RequestMapping(value = "/addShip", method=RequestMethod.POST)
+	public String addShipPOST(@ModelAttribute("ship") Ship ship, Model model) {
+		shipService.save(ship);
+		return "redirect:showShips";
 	}
 
 }

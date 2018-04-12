@@ -16,4 +16,8 @@ public class ShipService {
 	public List<Ship> findAll() {
 		return (List<Ship>) shipRepository.findAll();
 	}
+
+	public Ship save(Ship ship) {
+		 return shipRepository.save(ship);		
+	}
 }
