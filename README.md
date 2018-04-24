@@ -6,6 +6,7 @@
 
 ## Programs needed
 First and foremost, you will need to install [Eclipse](https://www.eclipse.org/downloads/download.php?file=/oomph/epp/oxygen/R/eclipse-inst-win64.exe) (if not already installed) and [Wamp](http://www.wampserver.com/en/#download-wrapper).
+And set up Maven and Spring Tools [See This Page](https://github.com/cristina1997/Server_Side_Rad_Labs/blob/master/Lab_Instructions/Lab%201%20Setup.docx)
 
 
 ## Run
