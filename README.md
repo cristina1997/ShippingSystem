@@ -18,11 +18,11 @@ First and foremost, you will need to install [Eclipse](https://www.eclipse.org/d
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write the following queries: 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * ```DROP IF EXISTS shipping;``` 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *```DROP IF EXISTS shipping;``` 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * ```CREATE DATABASE shipping;```
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *```CREATE DATABASE shipping;```
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * ```USE shipping;```
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *```USE shipping;```
 
 **2. Eclipse**
 
