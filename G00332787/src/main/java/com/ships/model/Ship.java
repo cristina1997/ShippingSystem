@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
@@ -69,7 +70,7 @@ public class Ship {
 	}
 	@Override
 	public String toString() {
-		return "\n " + name + ", " + metres + ", "+ cost; 
+		return name + ", " + metres + ", "+ cost; 
 	}	
 	
 }

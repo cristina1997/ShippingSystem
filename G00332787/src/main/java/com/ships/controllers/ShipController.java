@@ -27,8 +27,8 @@ public class ShipController {
 	@RequestMapping(value = "/showShips", method=RequestMethod.GET)
 	public String listShips(Model model) {
 		
-		List<Ship> ships = shipService.findAll();
-		model.addAttribute("ships", ships);
+		List<Ship> ships = shipService.findAll();							// gets all the values in the ships table
+		model.addAttribute("ships", ships);									// it links the data to the returned page containing "ships" attribute
 		
 		return "showShips";
 	}
@@ -36,8 +36,8 @@ public class ShipController {
 	@RequestMapping(value = "/addShip", method=RequestMethod.GET)
 	public String addShipGET(Model model) {
 
-		Ship ship = new Ship();
-		model.addAttribute("ship", ship);
+		Ship ship = new Ship();												// it creates a new ship
+		model.addAttribute("ship", ship);									// it links the data to the returned page containing "ship" attribute
 		
 		return "addShip";
 	}
@@ -45,10 +45,11 @@ public class ShipController {
 	@RequestMapping(value = "/addShip", method=RequestMethod.POST)
 	public String addShipPOST(@Valid @ModelAttribute("ship") Ship ship, BindingResult result, Model model) {
 		
+		// return the addShip.jsp page if there are any errors
 		if (result.hasErrors())
-			return "addShip";
-		
-		shipService.save(ship);
+			return "addShip";		
+
+		shipService.save(ship);												// it saves the data of the ship in the database
 		return "redirect:showShips";
 	}
 

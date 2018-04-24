@@ -23,8 +23,8 @@ public class ShippingCompanyController {
 	@RequestMapping(value = "/showShippingCompanies", method=RequestMethod.GET)
 	public String listShippingCompany(Model model) {
 		
-		List<ShippingCompany> shippingCompanies = shippingCompanyService.findAll();
-		model.addAttribute("shippingCompanies", shippingCompanies);
+		List<ShippingCompany> shippingCompanies = shippingCompanyService.findAll();			// gets all the values in the shipping companies table
+		model.addAttribute("shippingCompanies", shippingCompanies);							// it links the data to the returned page containing "shippingCompanies" attribute
 		
 		return "showShippingCompanies";
 	}
@@ -32,8 +32,8 @@ public class ShippingCompanyController {
 	@RequestMapping(value = "/addShippingCompany", method=RequestMethod.GET)
 	public String addShippingCompanyGET(Model model) {
 
-		ShippingCompany shippingCompany = new ShippingCompany();
-		model.addAttribute("shippingCompany", shippingCompany);
+		ShippingCompany shippingCompany = new ShippingCompany();							// it creates a new shipping company
+		model.addAttribute("shippingCompany", shippingCompany);								// it links the data to the returned page containing "shippingCompany" attribute
 		
 		return "addShippingCompany";
 	}
@@ -41,10 +41,11 @@ public class ShippingCompanyController {
 	@RequestMapping(value = "/addShippingCompany", method=RequestMethod.POST)
 	public String addShippingCompanyPOST(@Valid @ModelAttribute("shippingCompany") ShippingCompany shippingCompany, BindingResult result, Model model) {
 		
+		// return the addShippingCompany.jsp page if there are any errors
 		if (result.hasErrors())
 			return "addShippingCompany";
 		
-		shippingCompanyService.save(shippingCompany);
+		shippingCompanyService.save(shippingCompany);										// it saves the data of the shipping companies in the database
 		return "redirect:showShippingCompanies";
 	}
 	

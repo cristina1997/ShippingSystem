@@ -8,7 +8,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
+import org.springframework.context.annotation.Role;
 import org.springframework.stereotype.Component;
 
 @Entity
@@ -20,9 +23,11 @@ public class OrderInfo {
 	private int oid;
 	@ManyToOne
 	@JoinColumn(name="scid")
+	@NotNull
 	private ShippingCompany shippingCompany;
 	@OneToOne
 	@JoinColumn(name="sid")
+	@NotNull
 	private Ship ship;
 	private String date;
 
